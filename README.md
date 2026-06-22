@@ -8,7 +8,7 @@
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 This project investigates the effectiveness of Convolutional Neural Networks (CNNs) for human posture classification (**Bending, Lying, Sitting, Standing**) using silhouette images. 
 
@@ -18,15 +18,15 @@ To identify the most vigorous approach, two clear architectures were developed a
 
 Beyond standard performance metrics, the project integrates **Grad-CAM (Gradient-weighted Class Activation Mapping)** to visually explain model predictions, ensuring the networks focus on anatomical structures rather than background noise.
 
-### 🚀 Latent Applications
+### Latent Applications
 * **Workplace Ergonomics:** Monitoring posture to prevent musculoskeletal disorders.
 * **Smart Healthcare:** Fall risk assessment and aged care monitoring.
 * **Human Activity Analysis:** Surveillance and behavioral analytics.
 
-> ⚠️ **Note:** This system is wilful strictly as a decision support tool and should not replace professional human judgment or medical expertise.
+> **Note:** This system is wilful strictly as a decision support tool and should not replace professional human judgment or medical expertise.
 ---
 
-## 📊 Dataset Profile
+## Dataset Profile
 
 | Property | Details |
 | :--- | :--- |
@@ -39,7 +39,7 @@ Beyond standard performance metrics, the project integrates **Grad-CAM (Gradient
 
 ---
 
-## 🏗️ Model Architectures
+## Model Architectures
 
 ### 1. Custom CNN (From Scratch)
 A consecutive convolutional network optimized for silhouette pattern recognition:
@@ -54,7 +54,7 @@ A consecutive convolutional network optimized for silhouette pattern recognition
 * **Classification Head:** Identical to the Custom CNN head to ensure a fair evaluation baseline.
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```text
 Human-Posture-Classification/
@@ -63,7 +63,7 @@ Human-Posture-Classification/
 ├── README.md                      # Project documentation
 └── dataset_link.md                # Quick link to source data
 
-## 📈 Evaluation & Explainability
+## Evaluation & Explainability
 
 ### Metrics Tracked 
 The models are strictly evaluated and compared using a comprehensive suite of performance criteria:. 
@@ -72,7 +72,7 @@ The models are strictly evaluated and compared using a comprehensive suite of pe
 * **ROC Curves & ROC AUC Scores:** To analyze the constant optimistic vs. hollow optimistic trade offs at various thresholds . 
 * **Inference Time:** Measured systematically to assess the feasibility of real world , real time edge deployment.
 
-### 🔍 Grad-CAM Interpretability
+### Grad-CAM Interpretability
 To prevent the models from operating as uninterpretable "black boxes," **Gradient-weighted Class Activation Mapping (Grad-CAM)** visualizes the optic focus of the last convolutional layer. 
 
 The heatmaps are interpreted as follows:
@@ -84,7 +84,7 @@ Grad-CAM analysis was deliberately applied to both **correctly classified** and 
 
 ---
 
-## 🔬 Core Research Questions Addressed
+## Core Research Questions Addressed
 
 1. **Classification Efficacy:** How accurately can deep learning CNN architectures distinguish human postures solely from high-contrast silhouette images?
 2. **Architecture Comparison:** Does a highly parameterized, pre-trained model (MobileNetV2) yield a statistically significant performance boost over a lightweight, custom-built CNN on simplified silhouette geometry?
@@ -94,7 +94,7 @@ Grad-CAM analysis was deliberately applied to both **correctly classified** and 
 
 ---
 
-## 🛑 Limitations
+## Limitations
 
 * **Silhouette Dependency:** The framework relies entirely on clean, pre-segmented silhouettes. Real-world imagery with cluttered backgrounds will severely degrade performance without a preprocessing foreground-extraction pipeline.
 * **Fixed Class Scope:** The system is strictly limited to four posture classes (*Bending, Lying, Sitting, Standing*) and cannot classify transitional or hybrid movements.
@@ -103,7 +103,7 @@ Grad-CAM analysis was deliberately applied to both **correctly classified** and 
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 * **Core Frameworks:** Python, TensorFlow, Keras
 * **Data Engineering & Analytics:** NumPy, Pandas, Scikit-learn
