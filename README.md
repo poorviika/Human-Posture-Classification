@@ -58,54 +58,55 @@ A consecutive convolutional network optimized for silhouette pattern recognition
 
 ```text
 Human-Posture-Classification/
-├── human-posture-notebook.ipynb   # Complete pipeline (Data prep to Grad-CAM)
-├── outputs.zip                    # Exported plots, curves, and weights
-├── README.md                      # Project documentation
-└── dataset_link.md                # Quick link to source data
+├── human-posture-notebook.ipynb   
+├── outputs                    
+├── README.md                     
+└── dataset_link.md              
 
-## Evaluation & Explainability
+# Evaluation & Explainability
 
-### Metrics Tracked 
+# Metrics Tracked 
 The models are strictly evaluated and compared using a comprehensive suite of performance criteria:. 
-* **Classification Accuracy:** Overall correctness of the model across all categories. * **Precision , Recall , & F1-Score:** Evaluated per class to ensure reliable performance on individual postures . 
-* **Confusion Matrices:** Used to identify exact classification overlaps (e.g ., misclassifying *Sitting* as *Bending*). 
-* **ROC Curves & ROC AUC Scores:** To analyze the constant optimistic vs. hollow optimistic trade offs at various thresholds . 
-* **Inference Time:** Measured systematically to assess the feasibility of real world , real time edge deployment.
+* Classification Accuracy: Overall correctness of the model across all categories.
+* Precision , Recall , & F1-Score: Evaluated per class to ensure reliable performance on individual postures. 
+* Confusion Matrices: Used to identify exact classification overlaps (e.g ., misclassifying Sitting as Bending). 
+* ROC Curves & ROC AUC Scores: To analyze the constant optimistic vs. hollow optimistic trade offs at various thresholds. 
+* Inference Time: Measured systematically to assess the feasibility of real world , real time edge deployment.
 
-### Grad-CAM Interpretability
-To prevent the models from operating as uninterpretable "black boxes," **Gradient-weighted Class Activation Mapping (Grad-CAM)** visualizes the optic focus of the last convolutional layer. 
+# Grad-CAM Interpretability
+To prevent the models from operating as uninterpretable "black boxes," Gradient-weighted Class Activation Mapping (Grad-CAM) visualizes the optic focus of the last convolutional layer. 
 
 The heatmaps are interpreted as follows:
-* **Red Regions** ➔ Highest model attention (The core features driving the prediction)
-* **Yellow/Green Regions** ➔ Moderate structural focus
-* **Blue Regions** ➔ Ignored background or extraneous spatial areas
+* Red Regions ➔ Highest model attention (The core features driving the prediction)
+* Yellow/Green Regions ➔ Moderate structural focus
+* Blue Regions ➔ Ignored background or extraneous spatial areas
 
 Grad-CAM analysis was deliberately applied to both **correctly classified** and **misclassified** samples. This allows for a deeper diagnosis of structural edge cases and uncovers exactly why a model failed on a specific posture.
 
 ---
 
-## Core Research Questions Addressed
+# Core Research Questions Addressed
 
-1. **Classification Efficacy:** How accurately can deep learning CNN architectures distinguish human postures solely from high-contrast silhouette images?
-2. **Architecture Comparison:** Does a highly parameterized, pre-trained model (MobileNetV2) yield a statistically significant performance boost over a lightweight, custom-built CNN on simplified silhouette geometry?
-3. **Augmentation Utility:** How effective are spatial data augmentations (rotations, shearing, scaling) in preventing overfitting when dealing with stark, binary-like boundaries?
-4. **Attention Verification:** Do the Grad-CAM heatmaps verify that the network's attention aligns logically with key anatomical landmarks (e.g., hips, knees, spine alignment)?
-5. **Failure Mode Analysis:** What are the recurring structural failure modes, and what causes the models to confuse highly similar geometries?
-
----
-
-## Limitations
-
-* **Silhouette Dependency:** The framework relies entirely on clean, pre-segmented silhouettes. Real-world imagery with cluttered backgrounds will severely degrade performance without a preprocessing foreground-extraction pipeline.
-* **Fixed Class Scope:** The system is strictly limited to four posture classes (*Bending, Lying, Sitting, Standing*) and cannot classify transitional or hybrid movements.
-* **Single-Subject Constraint:** Multi-person scenes are currently unsupported; the presence of multiple silhouettes within a single frame will cause classification errors.
-* **Non-Causal Explanation:** Grad-CAM maps indicate statistical feature correlations and spatial attention highlights, but they do not equal strict causal proof of reasoning.
+1.Classification Efficacy:How accurately can deep learning CNN architectures distinguish human postures solely from high-contrast silhouette images?
+2.Architecture Comparison:Does a highly parameterized, pre-trained model (MobileNetV2) yield a statistically significant performance boost over a lightweight, custom-built CNN on simplified silhouette geometry?
+3.Augmentation Utility:How effective are spatial data augmentations (rotations, shearing, scaling) in preventing overfitting when dealing with stark, binary-like boundaries?
+4.Attention Verification:Do the Grad-CAM heatmaps verify that the network's attention aligns logically with key anatomical landmarks (e.g., hips, knees, spine alignment)?
+5.Failure Mode Analysis:What are the recurring structural failure modes, and what causes the models to confuse highly similar geometries?
 
 ---
 
-## Technologies Used
+# Limitations
 
-* **Core Frameworks:** Python, TensorFlow, Keras
-* **Data Engineering & Analytics:** NumPy, Pandas, Scikit-learn
-* **Computer Vision & Visualization:** OpenCV, Matplotlib, Seaborn
-* **Development Environment:** Kaggle Notebooks 
+Silhouette Dependency: The framework relies entirely on clean, pre-segmented silhouettes. Real-world imagery with cluttered backgrounds will severely degrade performance without a preprocessing foreground-extraction pipeline.
+Fixed Class Scope:The system is strictly limited to four posture classes (*Bending, Lying, Sitting, Standing*) and cannot classify transitional or hybrid movements.
+Single-Subject Constraint:Multi-person scenes are currently unsupported; the presence of multiple silhouettes within a single frame will cause classification errors.
+Non-Causal Explanation:Grad-CAM maps indicate statistical feature correlations and spatial attention highlights, but they do not equal strict causal proof of reasoning.
+
+---
+
+# Technologies Used
+
+Core Frameworks:Python, TensorFlow, Keras
+Data Engineering & Analytics:NumPy, Pandas, Scikit-learn
+Computer Vision & Visualization:OpenCV, Matplotlib, Seaborn
+Development Environment:Kaggle Notebooks 
