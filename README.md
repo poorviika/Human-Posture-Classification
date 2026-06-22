@@ -81,7 +81,7 @@ The heatmaps are interpreted as follows:
 * Yellow/Green Regions ➔ Moderate structural focus
 * Blue Regions ➔ Ignored background or extraneous spatial areas
 
-Grad-CAM analysis was deliberately applied to both **correctly classified** and **misclassified** samples. This allows for a deeper diagnosis of structural edge cases and uncovers exactly why a model failed on a specific posture.
+Grad-CAM analysis was deliberately applied to both correctly classified and misclassified samples. This allows for a deeper diagnosis of structural edge cases and uncovers exactly why a model failed on a specific posture.
 
 ---
 
