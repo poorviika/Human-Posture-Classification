@@ -8,6 +8,42 @@
 
 ---
 
+## Quick Start
+
+1. Clone the repo and enter the folder:
+
+```bash
+git clone <your-repo-url>
+cd Human-Posture-Classification
+```
+
+2. Install dependencies (create `requirements.txt` first if not present):
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Download the dataset from Kaggle and place it under `data/silhouettes/` (folder structure: `data/silhouettes/bending`, `.../lying`, `.../sitting`, `.../standing`). Example using Kaggle CLI:
+
+```bash
+kaggle datasets download -d deepshah16/silhouettes-of-human-posture --unzip -p data/
+```
+
+Alternatively set an environment variable to the dataset root:
+
+```bash
+export DATASET_PATH=/full/path/to/silhouettes
+```
+
+4. Open the notebook and run cells (the notebook will auto-detect a Kaggle dataset or use the `DATASET_PATH` environment variable):
+
+```bash
+jupyter notebook human-posture-notebook.ipynb
+```
+
+If you prefer a quick demo (inference-only), see `src/infer.py` (if present) or run the summary notebook `human-posture-notebook-summary.ipynb`.
+
+
 ## Project Overview
 
 This project investigates the effectiveness of Convolutional Neural Networks (CNNs) for human posture classification (**Bending, Lying, Sitting, Standing**) using silhouette images. 
