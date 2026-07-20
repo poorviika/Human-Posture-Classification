@@ -8,22 +8,13 @@
 
 ---
 
-## Quick Start
-
-1. Clone the repo and enter the folder:
-
-```bash
-git clone <your-repo-url>
-cd Human-Posture-Classification
-```
-
-2. Install dependencies:
+1. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Download the dataset from Kaggle and place it under `data/silhouettes/` (folder structure: `data/silhouettes/bending`, `.../lying`, `.../sitting`, `.../standing`). Example using Kaggle CLI:
+2. Download the dataset from Kaggle and place it under `data/silhouettes/` (folder structure: `data/silhouettes/bending`, `.../lying`, `.../sitting`, `.../standing`). Example using Kaggle CLI:
 
 ```bash
 kaggle datasets download -d deepshah16/silhouettes-of-human-posture --unzip -p data/
