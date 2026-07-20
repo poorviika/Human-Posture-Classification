@@ -17,7 +17,7 @@ git clone <your-repo-url>
 cd Human-Posture-Classification
 ```
 
-2. Install dependencies (create `requirements.txt` first if not present):
+2. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
