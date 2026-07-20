@@ -38,8 +38,6 @@ For a concise project summary, open the summary notebook:
 jupyter notebook human-posture-notebook-summary.ipynb
 ```
 
-If you prefer a quick demo (inference-only), see `src/infer.py`.
-
 
 ## Project Overview
 
