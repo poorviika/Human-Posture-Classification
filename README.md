@@ -98,15 +98,13 @@ A consecutive convolutional network optimized for silhouette pattern recognition
 ```text
 Human-Posture-Classification/
 ├── human-posture-notebook.ipynb
-├── PROJECT.md
 ├── README.md
 ├── requirements.txt
 ├── dataset_link.md
 ├── output/
 │   ├── figures/
-│   └── models/  # model files are excluded from Git or stored separately
-└── src/
-    └── infer.py
+│   └── model_comparision_table.csv
+
 ```
 
 ## Evaluation & Explainability
