@@ -1,6 +1,6 @@
 # Human Posture Classification Framework
 
-> A artful learning framework for classifying human postures from silhouette images using a Custom CNN and MobileNetV2 with Grad- CAM explainability.
+> An experimental framework for classifying human postures from silhouette images using a Custom CNN and MobileNetV2 with Grad-CAM explainability.
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg)](https://www.tensorflow.org/)
@@ -48,9 +48,9 @@ If you prefer a quick demo (inference-only), see `src/infer.py` (if present) or 
 
 This project investigates the effectiveness of Convolutional Neural Networks (CNNs) for human posture classification (**Bending, Lying, Sitting, Standing**) using silhouette images. 
 
-To identify the most vigorous approach, two clear architectures were developed and compared:
-1. **Custom CNN:** Designed, optimized , and trained entirely from scratch.
-2. **MobileNetV2:** Utilized transfer learning leveraging ImageNet pre-trained weights, followed by fine- tuning.
+To identify the most effective approach, two architectures were developed and compared:
+1. **Custom CNN:** Designed, optimized, and trained entirely from scratch.
+2. **MobileNetV2:** Utilized transfer learning leveraging ImageNet pre-trained weights, followed by fine-tuning.
 
 Beyond standard performance metrics, the project integrates **Grad-CAM (Gradient-weighted Class Activation Mapping)** to visually explain model predictions, ensuring the networks focus on anatomical structures rather than background noise.
 
@@ -59,8 +59,16 @@ Beyond standard performance metrics, the project integrates **Grad-CAM (Gradient
 * **Smart Healthcare:** Fall risk assessment and aged care monitoring.
 * **Human Activity Analysis:** Surveillance and behavioral analytics.
 
-> **Note:** This system is wilful strictly as a decision support tool and should not replace professional human judgment or medical expertise.
+> **Note:** This system is intended strictly as a decision support tool and should not replace professional human judgment or medical expertise.
 ---
+
+## Results Snapshot
+
+* **Best model:** Custom CNN
+* **Test accuracy:** 92.78%
+* **Macro F1:** 0.9284
+* **Macro AUC:** 0.9938
+* **Inference speed:** ~3.5 ms/image
 
 ## Dataset Profile
 
@@ -82,8 +90,8 @@ A consecutive convolutional network optimized for silhouette pattern recognition
 
 `Input (128×128×3) ➔ 4 × [Conv2D ➔ BatchNorm ➔ ReLU ➔ MaxPool] ➔ Global Average Pooling ➔ Dense (256) ➔ Dropout ➔ Softmax Output`
 
-* **Feature Extraction:** Four active convolutional blocks scaling filters from 32 up to 256 .
-* **Classification Head:** Global ordinary Pooling (GAP) to reduce dimensionality, a dense layer with 256 units , dropout for regularization , and a 4 way Softmax layer.
+* **Feature Extraction:** Four active convolutional blocks scaling filters from 32 up to 256.
+* **Classification Head:** Global Average Pooling (GAP) to reduce dimensionality, a dense layer with 256 units, dropout for regularization, and a 4-way softmax layer.
 
 ### 2. MobileNetV2 (Transfer Learning)
 * **Base Network:** Pre trained on ImageNet (weights frozen initially for feature extraction , then selectively unfrozen for fine tuning).
@@ -94,20 +102,26 @@ A consecutive convolutional network optimized for silhouette pattern recognition
 
 ```text
 Human-Posture-Classification/
-├── human-posture-notebook.ipynb   
-├── outputs                    
-├── README.md                     
-└── dataset_link.md              
+├── human-posture-notebook.ipynb
+├── PROJECT.md
+├── README.md
+├── requirements.txt
+├── dataset_link.md
+├── output/
+│   ├── figures/
+│   └── models/  # model files are excluded from Git or stored separately
+└── src/
+    └── infer.py
+```
 
-# Evaluation & Explainability
+## Evaluation & Explainability
 
-# Metrics Tracked 
-The models are strictly evaluated and compared using a comprehensive suite of performance criteria:. 
-* Classification Accuracy: Overall correctness of the model across all categories.
-* Precision , Recall , & F1-Score: Evaluated per class to ensure reliable performance on individual postures. 
-* Confusion Matrices: Used to identify exact classification overlaps (e.g ., misclassifying Sitting as Bending). 
-* ROC Curves & ROC AUC Scores: To analyze the constant optimistic vs. hollow optimistic trade offs at various thresholds. 
-* Inference Time: Measured systematically to assess the feasibility of real world , real time edge deployment.
+The models are evaluated and compared using a comprehensive suite of performance criteria:
+* **Classification Accuracy:** Overall correctness across posture categories.
+* **Precision, Recall, & F1-Score:** Per-class metrics to ensure reliable performance on individual postures.
+* **Confusion Matrices:** Identify exact classification overlaps (for example, misclassifying Sitting as Bending).
+* **ROC Curves & ROC AUC Scores:** Analyze classifier performance across decision thresholds.
+* **Inference Time:** Measured to assess feasibility for real-world or edge deployment.
 
 # Grad-CAM Interpretability
 To prevent the models from operating as uninterpretable "black boxes," Gradient-weighted Class Activation Mapping (Grad-CAM) visualizes the optic focus of the last convolutional layer. 
