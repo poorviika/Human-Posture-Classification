@@ -41,7 +41,7 @@ export DATASET_PATH=/full/path/to/silhouettes
 jupyter notebook human-posture-notebook.ipynb
 ```
 
-For a faster recruiter view, open the summary notebook:
+For a concise project summary, open the summary notebook:
 
 ```bash
 jupyter notebook human-posture-notebook-summary.ipynb
