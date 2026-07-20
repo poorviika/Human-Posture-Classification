@@ -41,7 +41,13 @@ export DATASET_PATH=/full/path/to/silhouettes
 jupyter notebook human-posture-notebook.ipynb
 ```
 
-If you prefer a quick demo (inference-only), see `src/infer.py` (if present) or run the summary notebook `human-posture-notebook-summary.ipynb`.
+For a faster recruiter view, open the summary notebook:
+
+```bash
+jupyter notebook human-posture-notebook-summary.ipynb
+```
+
+If you prefer a quick demo (inference-only), see `src/infer.py`.
 
 
 ## Project Overview
